@@ -22,7 +22,6 @@ export default function App() {
         matchingRecipeTitles={matchingRecipeTitles}
         setMatchingRecipeTitles={setMatchingRecipeTitles}
       />
-
     </>
   );
 }

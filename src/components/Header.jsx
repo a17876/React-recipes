@@ -1,21 +1,24 @@
 import { useState } from "react";
 import "../App.css";
 import React from "react";
-import { foods } from '../data'; 
+import { foods } from "../data";
 
-export default function Header({ searchWord, setsearchWord, matchingRecipeTitles , setMatchingRecipeTitles}) {
-   
-
-
+export default function Header({
+  searchWord,
+  setsearchWord,
+  matchingRecipeTitles,
+  setMatchingRecipeTitles,
+}) {
   const searchRecipes = (e) => {
     const word = e.target.value;
     setsearchWord(word);
     console.log(searchWord);
 
     const matchingTitles = foods
-      .filter((recipe) =>
-        recipe.name.toLowerCase().includes(searchWord.toLowerCase()) ||
-        recipe.description.toLowerCase().includes(searchWord.toLowerCase())
+      .filter(
+        (recipe) =>
+          recipe.name.toLowerCase().includes(searchWord.toLowerCase()) ||
+          recipe.description.toLowerCase().includes(searchWord.toLowerCase())
       )
       .map((recipe) => recipe.name);
     setMatchingRecipeTitles(matchingTitles);
@@ -25,7 +28,6 @@ export default function Header({ searchWord, setsearchWord, matchingRecipeTitles
   const clearSearchBar = () => {
     setsearchWord("");
   };
-  
 
   return (
     <>
@@ -33,14 +35,12 @@ export default function Header({ searchWord, setsearchWord, matchingRecipeTitles
 
       <input
         type="text"
-        placeholder={ !searchWord ? "Search Recipes" : searchWord }
-        value={ searchWord }
-        onChange={ searchRecipes }
+        placeholder={!searchWord ? "Search Recipes" : searchWord}
+        value={searchWord}
+        onChange={searchRecipes}
       />
 
-      <button onClick={ clearSearchBar }>clear</button>
-
-
+      <button onClick={clearSearchBar}>clear</button>
     </>
   );
 }
