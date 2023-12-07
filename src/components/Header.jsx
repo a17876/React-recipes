@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "../App.css";
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
 import { foods } from '../data'; 
 
 export default function Header({ searchWord, setsearchWord, matchingRecipeTitles , setMatchingRecipeTitles}) {
@@ -30,11 +29,7 @@ export default function Header({ searchWord, setsearchWord, matchingRecipeTitles
 
   return (
     <>
-      <Navbar bg="light" expand="lg" className="nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Recipes</Nav.Link>
-        </Nav>
-      </Navbar>
+      <h1>Recipes</h1>
 
       <input
         type="text"
